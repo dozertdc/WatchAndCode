@@ -1,13 +1,23 @@
-//It should store the todos array on an object
-//It should have a display todos method
-//todoList.addTodo should add objects
-//todoList.changeTodo should change the todoText property
-//todoList.toggleCompleted should change the completed property
+//displayTodos should show .todoText
+//displayTodos should tell you if todos is empty
+//displayTodos should show completed
+
 
 var todoList = {
     todos: [],
     displayTodos: function(){
-        console.log("My Todos: " + this.todos);
+        console.log('My Todos:')
+        if(this.todos.length === 0){
+            console.log('Your todo list is empty');
+        }else{
+            for(var i=0; i<this.todos.length; i++){
+                if(this.todos[i].completed === true){
+                    console.log("(x) " + this.todos[i].todoText);
+                }else{
+                    console.log("( ) " + this.todos[i].todoText);
+                }
+            }
+        }
     },
     addTodo: function(todoText){
         this.todos.push({
@@ -39,4 +49,3 @@ todoList.addTodo('added todo');
 todoList.changeTodo(0, 'this is new');
 todoList.toggleCompleted(0);
 todoList.deleteTodo(0);
-
