@@ -1,7 +1,5 @@
-//displayTodos should show .todoText
-//displayTodos should tell you if todos is empty
-//displayTodos should show completed
-
+//toggleAll: If everything is true, make everything false
+//toggleAll: Otherwise, make everything true
 
 var todoList = {
     todos: [],
@@ -39,13 +37,30 @@ var todoList = {
         var todo = this.todos[position];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+    toggleAll: function(){
+        var totalTodos = this.todos.length;
+        var completedTodos = 0;
+        //get completed todos
+        for(var i=0; i<totalTodos; i++){
+            if(this.todos[i].completed===true){
+                completedTodos++;
+            }
+        }
+
+        if(completedTodos===totalTodos){
+            //Make everything false
+            for(var i=0; i<totalTodos; i++){
+                this.todos[i].completed=false;
+            }
+        }else{
+            //Make everything true
+            for(var i=0; i<totalTodos; i++){
+                this.todos[i].completed=true;
+            }
+        }
+        this.displayTodos();
     }
 }
 
 
-//testing
-todoList.displayTodos();
-todoList.addTodo('added todo');
-todoList.changeTodo(0, 'this is new');
-todoList.toggleCompleted(0);
-todoList.deleteTodo(0);
