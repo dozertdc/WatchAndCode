@@ -64,3 +64,17 @@ var todoList = {
 }
 
 
+// We want to get access to the display todos button
+// We want to run the displayTodos method, when clicks the display
+// todos button.
+
+var displayTodosButton = document.getElementById('displayTodosButton');
+displayTodosButton.addEventListener('click', function(){
+    todoList.displayTodos();
+});
+
+//
+var toggleAllButton = document.getElementById('toggleAllButton');
+toggleAllButton.addEventListener('click', function(){
+    todoList.toggleAll();
+});
