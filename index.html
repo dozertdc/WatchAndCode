@@ -6,8 +6,33 @@
 <body>
     <!--There should be a "Display todos" button and a "Toggle all" button in the app-->
     <h1>Todo List</h1>
-    <button id="displayTodos">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
+
+    <div>
+        <button onclick="handlers.displayTodos()">Display Todos</button>
+        <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+    <!--Working Controls for .addTodo-->
+    <div>
+        <button onclick="handlers.addTodo()">Add</button>
+        <input id="addTodoTextInput" type="text"/>
+    </div>
+    <!--Working Controls for .changeTodo-->
+    <div>
+        <button onclick="handlers.changeTodo()">Change Todo</button>
+        <input id="changeTodoPositionInput" type="number"/>
+        <input id="changeTodoTextInput" type="text"/>
+    </div>
+    <!--Working Controls for .deleteTodo-->
+    <div>
+        <button onclick="handlers.deleteTodo()">Delete Todo</button>
+        <input id="deleteTodoPositionInput" type="number"/>
+    </div>
+    <!--Working Controls for .toggleCompleted-->
+    <div>
+        <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+        <input id="toggleCompletedPositionInput" type="number"/>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
